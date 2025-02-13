@@ -1,0 +1,5 @@
+name: UltraManager
+main: com.squishyslime.Main
+version: 1.0.0
+api-version: '1.21'
+description: Easier ways to manage your server.
