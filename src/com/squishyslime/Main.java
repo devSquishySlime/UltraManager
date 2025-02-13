@@ -1,16 +1,23 @@
 package com.squishyslime;
 
+import java.util.HashSet;
+import java.util.UUID;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.squishyslime.commands.ciCommand;
 import com.squishyslime.commands.dayCommand;
+import com.squishyslime.commands.nightCommand;
+import com.squishyslime.commands.vanishCommand;
 
 public class Main extends JavaPlugin {
+	public HashSet<UUID> vanishedPlayers = new HashSet<>();
 	@Override
 	public void onEnable() {
 		getCommand("day").setExecutor(new dayCommand());
 		getCommand("night").setExecutor(new nightCommand());
 		getCommand("ci").setExecutor(new ciCommand());
-		getCommand("vanish").setExecutor(new vanishCommand());
+		getCommand("vanish").setExecutor(new vanishCommand(this));
 		getCommand("give").setExecutor(new giveCommand());
 		getCommand("sun").setExecutor(new sunCommand());
 		getCommand("rain").setExecutor(new rainCommand());
