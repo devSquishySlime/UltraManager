@@ -81,6 +81,9 @@ public class vanishCommand implements CommandExecutor {
 					target.sendMessage("§6You are now hidden!");
 				}
 			}
+			else {
+				sender.sendMessage("§cUsage: /vanish <player>");
+			}
 		}
 		else {
 			sender.sendMessage("§cYou don't have permission to use that command!");

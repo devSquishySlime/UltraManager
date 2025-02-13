@@ -7,8 +7,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.squishyslime.commands.ciCommand;
 import com.squishyslime.commands.dayCommand;
+import com.squishyslime.commands.flyCommand;
+import com.squishyslime.commands.giveCommand;
 import com.squishyslime.commands.nightCommand;
+import com.squishyslime.commands.rainCommand;
+import com.squishyslime.commands.sunCommand;
+import com.squishyslime.commands.thunderCommand;
+import com.squishyslime.commands.tpallCommand;
 import com.squishyslime.commands.vanishCommand;
+import com.squishyslime.tabcompletion.giveTab;
 
 public class Main extends JavaPlugin {
 	public HashSet<UUID> vanishedPlayers = new HashSet<>();
@@ -19,6 +26,7 @@ public class Main extends JavaPlugin {
 		getCommand("ci").setExecutor(new ciCommand());
 		getCommand("vanish").setExecutor(new vanishCommand(this));
 		getCommand("give").setExecutor(new giveCommand());
+		getCommand("give").setTabCompleter(new giveTab());
 		getCommand("sun").setExecutor(new sunCommand());
 		getCommand("rain").setExecutor(new rainCommand());
 		getCommand("thunder").setExecutor(new thunderCommand());

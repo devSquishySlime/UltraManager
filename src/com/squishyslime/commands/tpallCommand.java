@@ -6,22 +6,21 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class dayCommand implements CommandExecutor {
+public class tpallCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(sender.hasPermission("ultraman.day")) {
-		if(sender instanceof Player) {
-			Player p = (Player) sender;
-			p.getWorld().setTime(6000);
-			p.sendMessage("§6Set time to 6000 in §c§l" + p.getWorld().getName());
-		}
-		else {
-			Bukkit.getWorlds().forEach(world -> {
-				world.setTime(6000);
-			});
-			sender.sendMessage("§6Set time to 6000 in all worlds.");
-		}
+		if(sender.hasPermission("ultraman.tpall")) {
+			if(sender instanceof Player) {
+				Player p = (Player) sender;
+				Bukkit.getOnlinePlayers().forEach(pO -> {
+					pO.teleport(p);
+				});
+				p.sendMessage("§6Teleported everyone to you!");
+			}
+			else {
+				sender.sendMessage("§cYou need to be a player to use that command!");
+			}
 		}
 		else {
 			sender.sendMessage("§cYou don't have permission to use that command!");
