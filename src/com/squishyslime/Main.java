@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.UUID;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import com.squishyslime.lib.Metrics;
 
 import com.squishyslime.commands.RegisterAllCommands;
 import com.squishyslime.listener.UltraManagerListener;
@@ -20,6 +21,7 @@ public class Main extends JavaPlugin {
 	public HashMap<UUID,String> mutedPeople = new HashMap<>();
 	@Override
 	public void onEnable() {
+		new Metrics(this,24784);
 		RegisterAllCommands r = new RegisterAllCommands(this);
 		r.register();
 		getServer().getPluginManager().registerEvents(new UltraManagerListener(this), this);
