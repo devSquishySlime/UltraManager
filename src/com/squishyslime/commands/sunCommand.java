@@ -13,8 +13,9 @@ public class sunCommand implements CommandExecutor {
 		if(sender.hasPermission("ultraman.sun")) {
 			if(sender instanceof Player) {
 				Player p = (Player) sender;
-				p.getWorld().setWeatherDuration(0);
-				sender.sendMessage("§6Set weather to clear in §l" + p.getWorld() + "§r§6!");
+				p.getWorld().setStorm(false);
+				p.getWorld().setThundering(false);
+				sender.sendMessage("§6Set weather to clear in §c§l" + p.getWorld().getName() + "§r§6!");
 			}
 			else {
 				Bukkit.getWorlds().forEach(world -> {

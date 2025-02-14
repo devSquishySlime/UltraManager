@@ -19,7 +19,7 @@ public class giveCommand implements CommandExecutor {
 					sender.sendMessage("§cPlayer doesn't exist!");
 					return true;
 				}
-				Material material = Material.valueOf(args[1]);
+				Material material = Material.valueOf(args[1].toUpperCase());
 				if(material == null) {
 					sender.sendMessage("§cWrong type of material!");
 					return true;

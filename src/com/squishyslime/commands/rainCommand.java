@@ -15,7 +15,7 @@ public class rainCommand implements CommandExecutor {
 				Player p = (Player) sender;
 				p.getWorld().setClearWeatherDuration(0);
 				p.getWorld().setThundering(false);
-				sender.sendMessage("§6Set weather to rain in §l" + p.getWorld() + "§r§6!");
+				sender.sendMessage("§6Set weather to rain in §c§l" + p.getWorld().getName() + "§r§6!");
 			}
 			else {
 				Bukkit.getWorlds().forEach(world -> {

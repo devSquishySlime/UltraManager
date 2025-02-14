@@ -6,22 +6,23 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class thunderCommand implements CommandExecutor {
+public class ecCommand implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		if(sender.hasPermission("ultraman.thunder")) {
+		if(sender.hasPermission("ultraman.ec")) {
 			if(sender instanceof Player) {
 				Player p = (Player) sender;
-				p.getWorld().setClearWeatherDuration(0);
-				p.getWorld().setThundering(true);
-				sender.sendMessage("§6Set weather to thunder in §c§l" + p.getWorld().getName() + "§r§6!");
+				if(args.length == 0) {
+					p.openInventory(p.getEnderChest());
+				}
+				else if(args.length == 1) {
+					Player target = Bukkit.getPlayerExact(args[0]);
+					p.openInventory(target.getEnderChest());
+				}
 			}
 			else {
-				Bukkit.getWorlds().forEach(world -> {
-					world.setWeatherDuration(0);
-				});
-				sender.sendMessage("§6Set weather to thunder in all worlds!");
+				sender.sendMessage("You need to be a player to use that command!");
 			}
 		}
 		else {

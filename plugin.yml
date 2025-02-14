@@ -3,3 +3,75 @@ main: com.squishyslime.Main
 version: 1.0.0
 api-version: '1.21'
 description: Easier ways to manage your server.
+commands:
+  broadcast:
+    description: Send a message to the whole server
+    aliases: [bc]
+  ci:
+    description: Clear your or another player's inventory.
+  clearchat:
+    description: Clears the chat in the whole server.
+    aliases: [cc]
+  day:
+    description: Sets the time to day in the player's world.
+  fly:
+    description: Gives you the ability to fly.
+  freeze:
+    description: Freezes you or another player.
+  give:
+    description: Gives you or another player items.
+  god:
+    description: Gives you god mode.
+  hat:
+    description: Sets the helmet to the item that you're holding in your hand.
+  nick:
+    description: Sets the nick for you or another player.
+  resetnick:
+    description: Resets the nick for players.
+  night:
+    description: Sets the time to night in the player's world.
+  rain:
+    description: Sets the weather to rain.
+  repair:
+    description: Allows you to repair all of your items.
+  staffchat:
+    description: Enables staffchat.
+  sun:
+    description: Sets the weather to clear.
+  thunder:
+    description: Sets the weather to thunder.
+  togglepvp:
+    description: Toggles your pvp on or off.
+    aliases: [tpvp]
+  tpall:
+    description: Teleport everyone to you.
+  vanish:
+    description: Vanishes you from other players.
+  msg:
+    description: Send a message to another player on the server
+    aliases: [w,tell]
+  socialspy:
+    description: Allows you to spy on dm's.
+    aliases: [ss]
+  invsee:
+    description: Allows you to see player's inventories.
+  speed:
+    description: Changes your walk speed.
+  flyspeed:
+    description: Changes your fly speed.
+  heal:
+    description: Heals you.
+  feed:
+    description: Feeds you.
+  rtp:
+    description: Teleports you to a random location.
+  mute:
+    description: Mutes a player.
+  umute:
+    description: Unmutes a player.
+  ec:
+    description: Open's your or another player's enderchest.
+  top:
+    description: Teleports you to the highest block.
+  tpoffline:
+    description: Teleports you to the last location of a player.
